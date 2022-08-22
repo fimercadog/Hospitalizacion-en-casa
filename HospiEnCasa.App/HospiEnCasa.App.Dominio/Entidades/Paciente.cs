@@ -1,0 +1,21 @@
+using System;
+namespace HospiEnCasa.App.Dominio
+{
+  public class Paciente : Persona
+  {
+    public string Direccion { get; set; }
+    public string Nombre { get; set; }
+    public float latitud { get; set; }
+    public float longitud { get; set; }
+    public DateOnly Fecha_Nacimiento { get; set; }
+
+    public Paciente()
+    {
+      FamiliarDesignado FamiliarDesignado;
+      Enfertmera Enfertmera;
+      Historia Historia;
+      SignosVitales SignosVitales;
+    }
+  }
+
+}

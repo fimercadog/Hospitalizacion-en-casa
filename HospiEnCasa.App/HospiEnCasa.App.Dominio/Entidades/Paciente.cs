@@ -1,4 +1,5 @@
 using System;
+
 namespace HospiEnCasa.App.Dominio
 {
   public class Paciente : Persona
@@ -9,13 +10,7 @@ namespace HospiEnCasa.App.Dominio
     public float longitud { get; set; }
     public DateOnly Fecha_Nacimiento { get; set; }
 
-    public Paciente()
-    {
-      FamiliarDesignado FamiliarDesignado;
-      Enfertmera Enfertmera;
-      Historia Historia;
-      SignosVitales SignosVitales;
-    }
+
   }
 
 }

@@ -8,7 +8,7 @@ namespace HospiEnCasa.App.Dominio
     public string Nombre { get; set; }
     public float latitud { get; set; }
     public float longitud { get; set; }
-    public DateOnly Fecha_Nacimiento { get; set; }
+    public DateTime Fecha_Nacimiento { get; set; }
 
 
   }

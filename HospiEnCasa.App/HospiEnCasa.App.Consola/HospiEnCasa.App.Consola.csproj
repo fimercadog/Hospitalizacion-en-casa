@@ -14,4 +14,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HospiEnCasa.App.Persistencia\HospiEnCasa.App.Persistencia.csproj" />
+  </ItemGroup>
+
+
 </Project>

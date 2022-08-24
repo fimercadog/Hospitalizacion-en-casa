@@ -7,5 +7,16 @@ namespace HospiEnCasa.App.Dominio
     public string Diagnostico { get; set; }
     public string Entorno { get; set; }
 
+    private SugerenciaCuidado idSugerenciaCuidado;
+
+    public SugerenciaCuidado GetIdSugerenciaCuidado()
+    {
+      return idSugerenciaCuidado;
+    }
+
+    public void SetIdSugerenciaCuidado(SugerenciaCuidado value)
+    {
+      idSugerenciaCuidado = value;
+    }
   }
 }

@@ -1,7 +1,7 @@
 using System;
 namespace HospiEnCasa.App.Dominio
 {
-  public class FamiliarDesignado
+  public class FamiliarDesignado:Persona
   {
 
     public int Id { get; set; }

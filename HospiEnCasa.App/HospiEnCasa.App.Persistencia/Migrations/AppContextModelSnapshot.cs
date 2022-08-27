@@ -65,7 +65,22 @@ namespace HospiEnCasa.App.Persistencia.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Apellidos")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Genero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroTelefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -151,15 +166,25 @@ namespace HospiEnCasa.App.Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Direccion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Fecha_Nacimiento")
+                    b.Property<DateTime>("FechaNacimiento")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Genero")
                         .HasColumnType("int");
+
+                    b.Property<float>("Latitud")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Longitud")
+                        .HasColumnType("real");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -168,12 +193,6 @@ namespace HospiEnCasa.App.Persistencia.Migrations
                     b.Property<string>("NumeroTelefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("latitud")
-                        .HasColumnType("real");
-
-                    b.Property<float>("longitud")
-                        .HasColumnType("real");
 
                     b.HasKey("Id");
 

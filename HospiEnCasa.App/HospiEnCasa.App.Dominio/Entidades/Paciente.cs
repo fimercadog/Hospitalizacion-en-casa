@@ -7,38 +7,51 @@ namespace HospiEnCasa.App.Dominio
     public int Id { get; set; }
     public string Direccion { get; set; }
     public string Nombre { get; set; }
-    public float latitud { get; set; }
-    public float longitud { get; set; }
-    public DateTime Fecha_Nacimiento { get; set; }
+    public float Latitud { get; set; }
+    public float Longitud { get; set; }
+    public string Ciudad { get; set; }
+    public DateTime FechaNacimiento { get; set; }
 
     // asociacion
 
-    private Enfermera idEnfermera;
+    public Enfermera Enfermera;
 
-    public Enfermera GetIdEnfermera()
+    public Enfermera GetEnfermera()
     {
-      return idEnfermera;
+      return Enfermera;
     }
 
-    public void SetIdEnfermera(Enfermera value)
+    public void SetEnfermera(Enfermera value)
     {
-      idEnfermera = value;
+      Enfermera = value;
+    }
+
+    public Medico Medico;
+
+    public Medico GetMedico()
+    {
+      return Medico;
+    }
+
+    public void SetMedico(Medico value)
+    {
+      Medico = value;
     }
 
 
-    private Historia idHistoria;
+    public Historia Historia;
 
-    public Historia GetIdHistoria()
+    public Historia GetHistoria()
     {
-      return idHistoria;
+      return Historia;
     }
 
-    public void SetIdHistoria(Historia value)
+    public void SetHistoria(Historia value)
     {
-      idHistoria = value;
+      Historia = value;
     }
 
-    private SignoVital idSignoVital;
+    public SignoVital idSignoVital;
 
     public SignoVital GetIdSignoVital()
     {
@@ -51,16 +64,16 @@ namespace HospiEnCasa.App.Dominio
     }
 
 
-    private FamiliarDesignado idFamiliarDesignado;
+    public FamiliarDesignado Familiar;
 
-    public FamiliarDesignado GetIdFamiliarDesignado()
+    public FamiliarDesignado GetFamiliar()
     {
-      return idFamiliarDesignado;
+      return Familiar;
     }
 
-    public void SetIdFamiliarDesignado(FamiliarDesignado value)
+    public void SetFamiliar(FamiliarDesignado value)
     {
-      idFamiliarDesignado = value;
+      Familiar = value;
     }
   }
 

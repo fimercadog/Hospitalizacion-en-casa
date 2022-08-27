@@ -34,7 +34,11 @@ namespace HospiEnCasa.App.Persistencia.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Parentesco = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Correo = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Correo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Apellidos = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NumeroTelefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Genero = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -82,9 +86,10 @@ namespace HospiEnCasa.App.Persistencia.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    latitud = table.Column<float>(type: "real", nullable: false),
-                    longitud = table.Column<float>(type: "real", nullable: false),
-                    Fecha_Nacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Latitud = table.Column<float>(type: "real", nullable: false),
+                    Longitud = table.Column<float>(type: "real", nullable: false),
+                    Ciudad = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Apellidos = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NumeroTelefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Genero = table.Column<int>(type: "int", nullable: false)

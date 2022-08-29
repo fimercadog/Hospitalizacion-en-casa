@@ -9,6 +9,8 @@ namespace HospiEnCasa.App.Consola
   {
     private static IReposotorioPaciente _repoPaciente = new RepositorioPaciente(new Persistencia.AppContext());
     private static IReposotorioEnfermera _repoEnfermera = new RepositorioEnfermera(new Persistencia.AppContext());
+    private static IReposotorioMedico _repoMedico = new RepositorioMedico(new Persistencia.AppContext());
+    // private static IReposotorioFamiliarDesignado _repoFamiliarDesignado = new RepositorioFamiliarDesignado(new Persistencia.AppContext());
     static void Main(string[] args)
     {
       Console.WriteLine("Hello, World! EF");
@@ -17,6 +19,13 @@ namespace HospiEnCasa.App.Consola
       // Enfermera
       AddEnfermera();
       BuscarEnfermera(1);
+      // Medico
+      AddMedico();
+      BuscarMedico(1);
+
+      // FamiliarDesignado
+      // AddFamiliarDesignado();
+      // BuscarFamiliarDesignado(1);
     }
 
     private static void AddPaciente()
@@ -43,6 +52,7 @@ namespace HospiEnCasa.App.Consola
       Console.WriteLine("Paciente: " + paciente.Nombre + " " + paciente.Apellidos);
     }
 
+// Enfermera
     private static void AddEnfermera()
     {
       var Enfermera = new Enfermera
@@ -65,6 +75,56 @@ namespace HospiEnCasa.App.Consola
       var Enfermera = _repoEnfermera.GetEnfermera(idEnfermera);
       Console.WriteLine("Enfermera: " + Enfermera.Nombre + " " + Enfermera.Apellidos);
     }
+
+    // Medico
+    private static void AddMedico()
+    {
+      var Medico = new Medico
+      {
+        Nombre = "Federico",
+        Apellidos = "Gutierrez",
+        NumeroTelefono = "739247598",
+        Genero = Genero.Masculino,
+
+        Especialidad = "General",
+        Codigo = "172893787",
+        RegistroRethus = "078754385",
+
+      };
+      _repoMedico.AddMedico(Medico);
+    }
+
+
+    private static void BuscarMedico(int idMedico)
+    {
+      var Medico = _repoMedico.GetMedico(idMedico);
+      Console.WriteLine("Medico: " + Medico.Nombre + " " + Medico.Apellidos);
+    }
+
+    // // FamiliarDesignado
+    // private static void AddFamiliarDesignado()
+    // {
+    //   var FamiliarDesignado = new FamiliarDesignado
+    //   {
+    //     Nombre = "Nancy",
+    //     Apellidos = "García",
+    //     NumeroTelefono = "739247598",
+    //     Genero = Genero.Masculino,
+
+    //     Parentesco = "Hermana",
+    //     Correo = "nancy@gmail.com"
+
+    //   };
+    //   _repoFamiliarDesignado.AddFamiliarDesignado(FamiliarDesignado);
+    // }
+
+
+    // private static void BuscarFamiliarDesignado(int idFamiliarDesignado)
+    // {
+    //   var FamiliarDesignado = _repoFamiliarDesignado.GetFamiliarDesignado(idFamiliarDesignado);
+    //   Console.WriteLine("FamiliarDesignado: " + FamiliarDesignado.Nombre + " " + FamiliarDesignado.Apellidos);
+    // }
+
 
   }
 }

@@ -14,16 +14,21 @@ namespace HospiEnCasa.App.Consola
     static void Main(string[] args)
     {
       Console.WriteLine("Hello, World! EF");
+      // paciente
+      BuscarTodosPaciente();
       AddPaciente();
       BuscarPaciente(1);
       // Enfermera
+      BuscarTodasEnfermera();
       AddEnfermera();
       BuscarEnfermera(1);
       // Medico
+      BuscarTodosMedico();
       AddMedico();
       BuscarMedico(1);
 
       // FamiliarDesignado
+      BuscarTodosFamiliarDesignado();
       AddFamiliarDesignado();
       BuscarFamiliarDesignado(1);
     }
@@ -53,6 +58,15 @@ namespace HospiEnCasa.App.Consola
       Console.WriteLine("Paciente: " + paciente.Nombre + " " + paciente.Apellidos);
     }
 
+    private static void BuscarTodosPaciente()
+    {
+      var pacientes = _repoPaciente.GetAllPacientes();
+      foreach (var paciente in pacientes)
+      {
+        Console.WriteLine("Paciente: " + paciente.Nombre + " " + paciente.Apellidos);
+      }
+    }
+
     // Enfermera
     private static void AddEnfermera()
     {
@@ -75,6 +89,15 @@ namespace HospiEnCasa.App.Consola
     {
       var Enfermera = _repoEnfermera.GetEnfermera(idEnfermera);
       Console.WriteLine("Enfermera: " + Enfermera.Nombre + " " + Enfermera.Apellidos);
+    }
+
+    private static void BuscarTodasEnfermera()
+    {
+      var Enfermeras = _repoEnfermera.GetAllEnfermeras();
+      foreach (var Enfermera in Enfermeras)
+      {
+        Console.WriteLine("Enfermera: " + Enfermera.Nombre + " " + Enfermera.Apellidos);
+      }
     }
 
     // Medico
@@ -102,6 +125,15 @@ namespace HospiEnCasa.App.Consola
       Console.WriteLine("Medico: " + Medico.Nombre + " " + Medico.Apellidos);
     }
 
+    private static void BuscarTodosMedico()
+    {
+      var Medicos = _repoMedico.GetAllMedicos();
+      foreach (var Medico in Medicos)
+      {
+        Console.WriteLine("Medico: " + Medico.Nombre + " " + Medico.Apellidos);
+      }
+    }
+
     // FamiliarDesignado
     private static void AddFamiliarDesignado()
     {
@@ -124,6 +156,15 @@ namespace HospiEnCasa.App.Consola
     {
       var FamiliarDesignado = _repoFamiliarDesignado.GetFamiliarDesignado(idFamiliarDesignado);
       Console.WriteLine("FamiliarDesignado: " + FamiliarDesignado.Nombre + " " + FamiliarDesignado.Apellidos);
+    }
+
+    private static void BuscarTodosFamiliarDesignado()
+    {
+      var FamiliarDesignados = _repoFamiliarDesignado.GetAllFamiliaresDesignados();
+      foreach (var FamiliarDesignado in FamiliarDesignados)
+      {
+        Console.WriteLine("FamiliarDesignado: " + FamiliarDesignado.Nombre + " " + FamiliarDesignado.Apellidos);
+      }
     }
 
 

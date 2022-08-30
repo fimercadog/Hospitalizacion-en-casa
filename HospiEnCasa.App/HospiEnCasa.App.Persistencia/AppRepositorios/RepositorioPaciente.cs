@@ -52,6 +52,7 @@ namespace HospiEnCasa.App.Persistencia
         pacienteEncontrado.Apellidos = paciente.Apellidos;
         pacienteEncontrado.NumeroTelefono = paciente.NumeroTelefono;
         pacienteEncontrado.Genero = paciente.Genero;
+        
         pacienteEncontrado.Direccion = paciente.Direccion;
         pacienteEncontrado.Latitud = paciente.Latitud;
         pacienteEncontrado.Longitud = paciente.Longitud;

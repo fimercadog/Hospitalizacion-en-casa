@@ -12,6 +12,7 @@ namespace HospiEnCasa.App.Consola
     private static IReposotorioMedico _repoMedico = new RepositorioMedico(new Persistencia.AppContext());
     private static IReposotorioFamiliarDesignado _repoFamiliarDesignado = new RepositorioFamiliarDesignado(new Persistencia.AppContext());
     private static IReposotorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
+    private static IReposotorioSugerenciaCuidado _repoSugerenciaCuidado = new RepositorioSugerenciaCuidado(new Persistencia.AppContext());
     static void Main(string[] args)
     {
       Console.WriteLine("Hello, World! EF");
@@ -42,6 +43,12 @@ namespace HospiEnCasa.App.Consola
       AddHistoria();
       BuscarHistoria(1);
       BuscarTodasHistorias();
+
+      // SugerenciaCuidado
+      AddSugerenciaCuidado();
+      BuscarSugerenciaCuidado(1);
+      BuscarTodasSugerenciaCuidados();
+
 
     }
 
@@ -209,6 +216,35 @@ namespace HospiEnCasa.App.Consola
         Console.WriteLine("Historia: " + Historia.Diagnostico + " " + Historia.Entorno);
       }
     }
+
+    // SugereiciaCuidado
+    private static void AddSugerenciaCuidado()
+    {
+      var SugerenciaCuidado = new SugerenciaCuidado
+      {
+        FechaHora = new DateTime(2033, 08, 30),
+        Descripcion = "persona de 25 años con perros",
+
+      };
+      _repoSugerenciaCuidado.AddSugerenciaCuidado(SugerenciaCuidado);
+    }
+
+
+    private static void BuscarSugerenciaCuidado(int idSugerenciaCuidado)
+    {
+      var SugerenciaCuidado = _repoSugerenciaCuidado.GetSugerenciaCuidado(idSugerenciaCuidado);
+      Console.WriteLine("SugerenciaCuidado: " + SugerenciaCuidado.FechaHora + " " + SugerenciaCuidado.Descripcion);
+    }
+
+    private static void BuscarTodasSugerenciaCuidados()
+    {
+      var SugerenciaCuidados = _repoSugerenciaCuidado.GetAllSugerenciaCuidados();
+      foreach (var SugerenciaCuidado in SugerenciaCuidados)
+      {
+        Console.WriteLine("SugerenciaCuidado: " + SugerenciaCuidado.FechaHora + " " + SugerenciaCuidado.Descripcion);
+      }
+    }
+
 
 
 

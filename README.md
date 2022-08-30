@@ -10,6 +10,9 @@ Proyecto que ayuda a solucionar la problematica de la poca atencion de usuarios 
 - Azure Data Studio
 - C#
 - SQL
+- HTML
+- CSS
+- JS
 
 ## Lista de integrantes y roles
 | Rol | Nombre de la persona | E-mail |

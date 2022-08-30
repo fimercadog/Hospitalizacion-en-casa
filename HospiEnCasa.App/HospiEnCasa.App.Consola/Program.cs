@@ -10,7 +10,7 @@ namespace HospiEnCasa.App.Consola
     private static IReposotorioPaciente _repoPaciente = new RepositorioPaciente(new Persistencia.AppContext());
     private static IReposotorioEnfermera _repoEnfermera = new RepositorioEnfermera(new Persistencia.AppContext());
     private static IReposotorioMedico _repoMedico = new RepositorioMedico(new Persistencia.AppContext());
-    // private static IReposotorioFamiliarDesignado _repoFamiliarDesignado = new RepositorioFamiliarDesignado(new Persistencia.AppContext());
+    private static IReposotorioFamiliarDesignado _repoFamiliarDesignado = new RepositorioFamiliarDesignado(new Persistencia.AppContext());
     static void Main(string[] args)
     {
       Console.WriteLine("Hello, World! EF");
@@ -24,10 +24,11 @@ namespace HospiEnCasa.App.Consola
       BuscarMedico(1);
 
       // FamiliarDesignado
-      // AddFamiliarDesignado();
-      // BuscarFamiliarDesignado(1);
+      AddFamiliarDesignado();
+      BuscarFamiliarDesignado(1);
     }
 
+    // Paciente
     private static void AddPaciente()
     {
       var paciente = new Paciente
@@ -52,7 +53,7 @@ namespace HospiEnCasa.App.Consola
       Console.WriteLine("Paciente: " + paciente.Nombre + " " + paciente.Apellidos);
     }
 
-// Enfermera
+    // Enfermera
     private static void AddEnfermera()
     {
       var Enfermera = new Enfermera
@@ -101,29 +102,29 @@ namespace HospiEnCasa.App.Consola
       Console.WriteLine("Medico: " + Medico.Nombre + " " + Medico.Apellidos);
     }
 
-    // // FamiliarDesignado
-    // private static void AddFamiliarDesignado()
-    // {
-    //   var FamiliarDesignado = new FamiliarDesignado
-    //   {
-    //     Nombre = "Nancy",
-    //     Apellidos = "García",
-    //     NumeroTelefono = "739247598",
-    //     Genero = Genero.Masculino,
+    // FamiliarDesignado
+    private static void AddFamiliarDesignado()
+    {
+      var FamiliarDesignado = new FamiliarDesignado
+      {
+        Nombre = "Nancy",
+        Apellidos = "García",
+        NumeroTelefono = "739247598",
+        Genero = Genero.Masculino,
 
-    //     Parentesco = "Hermana",
-    //     Correo = "nancy@gmail.com"
+        Parentesco = "Hermana",
+        Correo = "nancy@gmail.com"
 
-    //   };
-    //   _repoFamiliarDesignado.AddFamiliarDesignado(FamiliarDesignado);
-    // }
+      };
+      _repoFamiliarDesignado.AddFamiliarDesignado(FamiliarDesignado);
+    }
 
 
-    // private static void BuscarFamiliarDesignado(int idFamiliarDesignado)
-    // {
-    //   var FamiliarDesignado = _repoFamiliarDesignado.GetFamiliarDesignado(idFamiliarDesignado);
-    //   Console.WriteLine("FamiliarDesignado: " + FamiliarDesignado.Nombre + " " + FamiliarDesignado.Apellidos);
-    // }
+    private static void BuscarFamiliarDesignado(int idFamiliarDesignado)
+    {
+      var FamiliarDesignado = _repoFamiliarDesignado.GetFamiliarDesignado(idFamiliarDesignado);
+      Console.WriteLine("FamiliarDesignado: " + FamiliarDesignado.Nombre + " " + FamiliarDesignado.Apellidos);
+    }
 
 
   }

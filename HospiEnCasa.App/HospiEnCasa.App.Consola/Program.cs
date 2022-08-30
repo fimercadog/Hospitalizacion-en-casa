@@ -11,26 +11,38 @@ namespace HospiEnCasa.App.Consola
     private static IReposotorioEnfermera _repoEnfermera = new RepositorioEnfermera(new Persistencia.AppContext());
     private static IReposotorioMedico _repoMedico = new RepositorioMedico(new Persistencia.AppContext());
     private static IReposotorioFamiliarDesignado _repoFamiliarDesignado = new RepositorioFamiliarDesignado(new Persistencia.AppContext());
+    private static IReposotorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
     static void Main(string[] args)
     {
       Console.WriteLine("Hello, World! EF");
       // paciente
-      BuscarTodosPaciente();
       AddPaciente();
       BuscarPaciente(1);
+      BuscarTodosPaciente();
+      // TODO:REVISAR METODO
+      // BorrarPaciente(13);
+
+
       // Enfermera
-      BuscarTodasEnfermera();
       AddEnfermera();
       BuscarEnfermera(1);
+      BuscarTodasEnfermera();
+
       // Medico
-      BuscarTodosMedico();
       AddMedico();
       BuscarMedico(1);
+      BuscarTodosMedico();
 
       // FamiliarDesignado
-      BuscarTodosFamiliarDesignado();
       AddFamiliarDesignado();
       BuscarFamiliarDesignado(1);
+      BuscarTodosFamiliarDesignado();
+
+      // Historia
+      AddHistoria();
+      BuscarHistoria(1);
+      BuscarTodasHistorias();
+
     }
 
     // Paciente
@@ -38,7 +50,7 @@ namespace HospiEnCasa.App.Consola
     {
       var paciente = new Paciente
       {
-        Nombre = "Fidel",
+        Nombre = "prueba",
         Apellidos = "Mercado",
         NumeroTelefono = "739247598",
         Genero = Genero.Masculino,
@@ -58,6 +70,7 @@ namespace HospiEnCasa.App.Consola
       Console.WriteLine("Paciente: " + paciente.Nombre + " " + paciente.Apellidos);
     }
 
+
     private static void BuscarTodosPaciente()
     {
       var pacientes = _repoPaciente.GetAllPacientes();
@@ -67,6 +80,7 @@ namespace HospiEnCasa.App.Consola
       }
     }
 
+    
     // Enfermera
     private static void AddEnfermera()
     {
@@ -166,6 +180,37 @@ namespace HospiEnCasa.App.Consola
         Console.WriteLine("FamiliarDesignado: " + FamiliarDesignado.Nombre + " " + FamiliarDesignado.Apellidos);
       }
     }
+
+
+    // Historia
+    private static void AddHistoria()
+    {
+      var Historia = new Historia
+      {
+        Diagnostico = "Dolor de ecabeza ",
+        Entorno = "persona de 25 años",
+
+      };
+      _repoHistoria.AddHistoria(Historia);
+    }
+
+
+    private static void BuscarHistoria(int idHistoria)
+    {
+      var Historia = _repoHistoria.GetHistoria(idHistoria);
+      Console.WriteLine("Historia: " + Historia.Diagnostico + " " + Historia.Entorno);
+    }
+
+    private static void BuscarTodasHistorias()
+    {
+      var Historias = _repoHistoria.GetAllHistorias();
+      foreach (var Historia in Historias)
+      {
+        Console.WriteLine("Historia: " + Historia.Diagnostico + " " + Historia.Entorno);
+      }
+    }
+
+
 
 
   }

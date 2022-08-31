@@ -18,42 +18,47 @@ namespace HospiEnCasa.App.Consola
     {
       Console.WriteLine("Hello, World! EF");
       // paciente
-      AddPaciente();
-      BuscarPaciente(1);
-      BuscarTodosPaciente();
-      // TODO:REVISAR METODO
-      // BorrarPaciente(13);
+      // AddPaciente();
+      // BuscarPaciente(1);
+      // BuscarTodosPaciente();
+      BorrarPaciente(24);
 
 
       // Enfermera
-      AddEnfermera();
-      BuscarEnfermera(1);
-      BuscarTodasEnfermera();
+      // AddEnfermera();
+      // BuscarEnfermera(1);
+      // BuscarTodasEnfermera();
+      BorrarEnfermera(24);
 
       // Medico
-      AddMedico();
-      BuscarMedico(1);
-      BuscarTodosMedico();
+      // AddMedico();
+      // BuscarMedico(1);
+      // BuscarTodosMedico();
+      BorrarMedico(24);
 
       // FamiliarDesignado
-      AddFamiliarDesignado();
-      BuscarFamiliarDesignado(1);
-      BuscarTodosFamiliarDesignado();
+      // AddFamiliarDesignado();
+      // BuscarFamiliarDesignado(1);
+      // BuscarTodosFamiliarDesignado();
+      BorrarFamiliarDesignado(24);
 
       // Historia
-      AddHistoria();
-      BuscarHistoria(1);
-      BuscarTodasHistorias();
+      // AddHistoria();
+      // BuscarHistoria(1);
+      // BuscarTodasHistorias();
+      BorrarHistoria(24);
 
       // SugerenciaCuidado
-      AddSugerenciaCuidado();
-      BuscarSugerenciaCuidado(1);
-      BuscarTodasSugerenciaCuidados();
+      // AddSugerenciaCuidado();
+      // BuscarSugerenciaCuidado(1);
+      // BuscarTodasSugerenciaCuidados();
+      BorrarSugerenciaCuidado(24);
 
       // SignoVital
-      AddSignoVital();
-      BuscarSignoVital(1);
-      BuscarTodasSignoVitales();
+      // AddSignoVital();
+      // BuscarSignoVital(1);
+      // BuscarTodasSignoVitales();
+      BorrarSignoVital(24);
 
 
 
@@ -85,6 +90,13 @@ namespace HospiEnCasa.App.Consola
     }
 
 
+    private static void BorrarPaciente(int idPaciente)
+    {
+      _repoPaciente.DeletePaciente(idPaciente);
+      Console.WriteLine("Paciente elminado: ");
+    }
+
+
     private static void BuscarTodosPaciente()
     {
       var pacientes = _repoPaciente.GetAllPacientes();
@@ -112,7 +124,11 @@ namespace HospiEnCasa.App.Consola
       _repoEnfermera.AddEnfermera(Enfermera);
     }
 
-
+    private static void BorrarEnfermera(int idEnfermera)
+    {
+      _repoEnfermera.DeleteEnfermera(idEnfermera);
+      Console.WriteLine("Enfermera elminada: ");
+    }
     private static void BuscarEnfermera(int idEnfermera)
     {
       var Enfermera = _repoEnfermera.GetEnfermera(idEnfermera);
@@ -146,7 +162,11 @@ namespace HospiEnCasa.App.Consola
       _repoMedico.AddMedico(Medico);
     }
 
-
+    private static void BorrarMedico(int idMedico)
+    {
+      _repoMedico.DeleteMedico(idMedico);
+      Console.WriteLine("Medico elminado: ");
+    }
     private static void BuscarMedico(int idMedico)
     {
       var Medico = _repoMedico.GetMedico(idMedico);
@@ -179,6 +199,11 @@ namespace HospiEnCasa.App.Consola
       _repoFamiliarDesignado.AddFamiliarDesignado(FamiliarDesignado);
     }
 
+    private static void BorrarFamiliarDesignado(int idFamiliarDesignado)
+    {
+      _repoFamiliarDesignado.DeleteFamiliarDesignado(idFamiliarDesignado);
+      Console.WriteLine("FamiliarDesignado elminado: ");
+    }
 
     private static void BuscarFamiliarDesignado(int idFamiliarDesignado)
     {
@@ -208,6 +233,11 @@ namespace HospiEnCasa.App.Consola
       _repoHistoria.AddHistoria(Historia);
     }
 
+    private static void BorrarHistoria(int idHistoria)
+    {
+      _repoHistoria.DeleteHistoria(idHistoria);
+      Console.WriteLine("Historia elminada: ");
+    }
 
     private static void BuscarHistoria(int idHistoria)
     {
@@ -234,6 +264,12 @@ namespace HospiEnCasa.App.Consola
 
       };
       _repoSugerenciaCuidado.AddSugerenciaCuidado(SugerenciaCuidado);
+    }
+
+    private static void BorrarSugerenciaCuidado(int idSugerenciaCuidado)
+    {
+      _repoSugerenciaCuidado.DeleteSugerenciaCuidado(idSugerenciaCuidado);
+      Console.WriteLine("SugerenciaCuidado elminada: ");
     }
 
 
@@ -264,7 +300,11 @@ namespace HospiEnCasa.App.Consola
       _repoSignoVital.AddSignoVital(SignoVital);
     }
 
-
+    private static void BorrarSignoVital(int idSignoVital)
+    {
+      _repoSignoVital.DeleteSignoVital(idSignoVital);
+      Console.WriteLine("SignoVital elminado: ");
+    }
 
     private static void BuscarSignoVital(int idSignoVital)
     {
@@ -280,6 +320,11 @@ namespace HospiEnCasa.App.Consola
         Console.WriteLine("SignoVital: " + SignoVital.FechaHora + " " + SignoVital.TipoSigno);
       }
     }
+
+
+
+
+
 
   }
 }

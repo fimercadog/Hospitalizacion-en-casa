@@ -13,6 +13,7 @@ namespace HospiEnCasa.App.Consola
     private static IReposotorioFamiliarDesignado _repoFamiliarDesignado = new RepositorioFamiliarDesignado(new Persistencia.AppContext());
     private static IReposotorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
     private static IReposotorioSugerenciaCuidado _repoSugerenciaCuidado = new RepositorioSugerenciaCuidado(new Persistencia.AppContext());
+    private static IReposotorioSignoVital _repoSignoVital = new RepositorioSignoVital(new Persistencia.AppContext());
     static void Main(string[] args)
     {
       Console.WriteLine("Hello, World! EF");
@@ -48,6 +49,12 @@ namespace HospiEnCasa.App.Consola
       AddSugerenciaCuidado();
       BuscarSugerenciaCuidado(1);
       BuscarTodasSugerenciaCuidados();
+
+      // SignoVital
+      // AddSignoVital();
+      // BuscarSignoVital(1);
+      // BuscarTodasSignoVitales();
+
 
 
     }
@@ -87,7 +94,7 @@ namespace HospiEnCasa.App.Consola
       }
     }
 
-    
+
     // Enfermera
     private static void AddEnfermera()
     {
@@ -217,7 +224,7 @@ namespace HospiEnCasa.App.Consola
       }
     }
 
-    // SugereiciaCuidado
+    // SugerenciaCuidado
     private static void AddSugerenciaCuidado()
     {
       var SugerenciaCuidado = new SugerenciaCuidado
@@ -245,9 +252,32 @@ namespace HospiEnCasa.App.Consola
       }
     }
 
+    // SignoVital
+    // private static void AddSignoVital()
+    // {
+    //   var SignoVital = new SignoVital
+    //   {
+    //     FechaHora = new DateTime(2033, 08, 30),
+    //     TipoSigno.Bueno
+    //   };
+    //   _repoSignoVital.AddSignoVital(SignoVital);
+    // }
 
 
+    // private static void BuscarSignoVital(int idSignoVital)
+    // {
+    //   var SignoVital = _repoSignoVital.GetSignoVital(idSignoVital);
+    //   Console.WriteLine("SignoVital: " + SignoVital.FechaHora + " " + SignoVital.TipoSigno);
+    // }
 
+    // private static void BuscarTodasSignoVitales()
+    // {
+    //   var SignosVitales = _repoSignoVital.GetAllSignosVitales();
+    //   foreach (var SignoVital in SignosVitales)
+    //   {
+    //     Console.WriteLine("SignoVital: " + SignoVital.FechaHora + " " + SignoVital.TipoSigno);
+    //   }
+    // }
 
   }
 }

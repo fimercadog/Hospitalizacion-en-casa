@@ -10,6 +10,7 @@ Proyecto que ayuda a solucionar la problematica de la poca atencion de usuarios 
 - Entity Framework
 - Framework Razor
 - Azure Data Studio
+- Boostrap 5
 - C#
 - SQL
 - HTML
@@ -22,7 +23,6 @@ Proyecto que ayuda a solucionar la problematica de la poca atencion de usuarios 
 | --------------------------- | ---------------------- | ----------------------- |
 | Líder del equipo            | Fidel Mercado Gómez    | fimercadog@gmail.com    |
 | Diseñador de software       | Fidel Mercado Gómez    | fimercadog@gmail.com    |
-| Diseñador de software       | Juan Sebastián García  | jsgp.071293@gmail.com   |
-| Diseñador UI                | Eliana María Rodríguez | emrodrigre@gmail.com    |
+| Tester                      | Juan Sebastián García  | jsgp.071293@gmail.com   |
 | Administrador configuración | Norbey Murillo         | norbeymume@gmail.com    |
-| Tester                      | Nancy Rodríguez        | nancyrodrigam@gmail.com |
+| Diseñador UI                | Nancy Rodríguez        | nancyrodrigam@gmail.com |

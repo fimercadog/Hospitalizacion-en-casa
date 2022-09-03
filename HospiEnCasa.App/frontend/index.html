@@ -1,0 +1,85 @@
+<!--TRAEMOS AGUNOS DE LOS RECURSOS A UTILIZAR EN NUESTRO DISEÑO-->
+<!--1.- https://fonts.google.com/ ***roboto*** seleccionamos fuentes-->
+<!--import **seleccionamos el contenido del style sin incluir ** copy en styles.css -->
+<!--https://getbootstrap.com/docs/5.0/getting-started/introduction/ **CSS**<link....-->
+<!--3.- https://michalsnik.github.io/aos/ **procedemos a copiar css, js, initialize-->
+<!--4.- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" **icónos**linea21-->
+<!--del punto anterior traemos todos nuestros iconos-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XK_Phones</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+  <!--https://getbootstrap.com/docs/5.0/getting-started/introduction/ **CSS**<link....-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!--Traemos todos nuestros iconos-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+<body>
+  <div class="hero" id="home">
+    <header>
+      <nav class="navbar">
+        <div class="brand">
+          <!--aquí esta el logo-->
+          <h2>Hospitalizacion en <strong>Casa</strong> </h2>
+        </div>
+        <!--creamos el menú-->
+        <ul class="menu" id="menu">
+          <!--lo ubicamos con js-->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="nosotros.html">Nosotros</a>
+          <li><a href="#">Servicio</a>
+            <ul>
+              <li><a href="persona.html">Persona</a>
+
+              <li><a href="paciente.html">Paciente</a>
+              <li><a href="enfermera.html">Enfermera</a>
+              <li><a href="medico.html">Médico</a>
+              <li><a href="familiar.html">Familiar Asignado</a>
+              <li><a href="signo.html">Signos Vitales</a>
+              <li><a href="historia.html">Historía</a>
+              <li><a href="sugerencias.html">Sugerencias de Cuidado</a>
+            </ul>
+          </li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <!--Actuatilizamos icónos **línea 20 link...fontawesome-->
+        <!--Cuando le demos clic a este icóno se va ha desplegar.-->
+        <div class="menu-bar">
+          <i class="fas fa-bars" id="menu-bar"></i>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="content-info">
+        <h1 class="display-1">This is the title</h1>
+        <!--Bootstrap-->
+        <h3>Here will be the slogan</h3>
+        <div class="button-content">
+          <button class="btn-toBuy">Buy now</button>
+          <button class="read-more">Read more</button>
+        </div>
+        <img src="./img/imagen principal.png" alt="">
+      </div>
+    </main>
+  </div>
+
+  
+  <div class="container">
+    <div class="row footer">
+      <i class="fas fa-copyright    "> &copy; Grupo retail -2022</i>
+    </div>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

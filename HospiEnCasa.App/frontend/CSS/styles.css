@@ -1,0 +1,153 @@
+/*Tenemos nuestro tipo de letras roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100&display=swap');
+@import 'mediaqueries.css';
+
+/*Creamos stylos por defecto*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+/*Colocamos nuestra imágen de fondo*/
+.hero {
+  width: 100vw;
+  height: 90vh;
+  background-color: #13a8f8;
+  /* background-image: url(../img/OLO2E00.jpg); */
+  background-size: cover;
+  max-width: 100%;
+}
+
+.navbar {
+  grid-template-columns: repeat(9, 1fr);
+  padding: 30px;
+}
+
+.navbar .brand {
+  color: #fdf7f7;
+  margin-top: 10px;
+}
+
+/*distribuimos horizontalmente el menu*/
+.navbar .menu {
+  grid-column: 6/9;
+  display: flex;
+  margin-top: 15px;
+}
+
+/*Desaparece los punticos de los items de separación*/
+.menu li {
+  list-style: none;
+}
+
+/*Ingresamos a nuestros enlaces directamente */
+.menu li a {
+  text-decoration: none;
+  /*Desaparece la línea de por debajo*/
+  margin-right: 3em;
+  /*Separación de los menú*/
+  font-size: 1.3em;
+  /*Incrementa el tamaño de la letra*/
+  color: rgb(247, 243, 243);
+  /*Color de la letra*/
+  font-weight: 200;
+  /*resalta el texto*/
+  padding: 10px 20px;
+}
+
+.menu li a:hover {
+  /*Cuando coloquemos el puntero encima cambia de color.*/
+  background-color: rgb(235, 63, 20);
+  transition: all .10s;
+  /*Colocamos un transition de 5 segundos.*/
+  color: #000;
+  /*Color de la letra*/
+}
+
+/*Con está le dicimos que desaparezca las 3 liniecitas y aparezca*/
+.menu-bar {
+  display: none;
+}
+
+/*  */
+
+.menu li ul {
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+
+.menu li:hover>ul {
+  display: block;
+}
+
+.menu li ul li {
+  position: relative;
+}
+
+.menu li ul li ul {
+  right: -140px;
+  top: 0px;
+}
+
+
+/*MAIN SECTION*/
+
+.main {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  text-align: 70vh;
+  height: 70vh;
+}
+
+.content-info {
+  /*sube o baja h1, h2, button */
+  margin-top: 5em;
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0px 3px 14px 8px rgba(10, 10, 10, 0.78);
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+.btn-toBuy,
+.read-more {
+  background-color: #ca4173;
+  padding: 8px 40px;
+  font-size: 1.2em;
+  border-radius: 20px;
+  border: none;
+}
+
+.read-more {
+  background: none;
+  border: 1px solid #fff;
+  margin: 20px;
+}
+
+.main img {
+  margin: 0em;
+  float: right;
+  margin-top: -22em;
+}
+
+.footer {
+  height: 10vh;
+  text-align: center;
+  background-color: #13a8f8;
+}

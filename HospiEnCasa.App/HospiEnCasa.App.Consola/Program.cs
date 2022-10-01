@@ -18,47 +18,47 @@ namespace HospiEnCasa.App.Consola
     {
       Console.WriteLine("Hello, World! EF");
       // paciente
-      // AddPaciente();
-      // BuscarPaciente(1);
-      // BuscarTodosPaciente();
-      BorrarPaciente(24);
+      AddPaciente();
+      BuscarPaciente(1);
+      BuscarTodosPaciente();
+      BorrarPaciente(2);
 
 
       // Enfermera
-      // AddEnfermera();
-      // BuscarEnfermera(1);
-      // BuscarTodasEnfermera();
+      AddEnfermera();
+      BuscarEnfermera(1);
+      BuscarTodasEnfermera();
       BorrarEnfermera(24);
 
       // Medico
-      // AddMedico();
-      // BuscarMedico(1);
-      // BuscarTodosMedico();
+      AddMedico();
+      BuscarMedico(1);
+      BuscarTodosMedico();
       BorrarMedico(24);
 
       // FamiliarDesignado
-      // AddFamiliarDesignado();
-      // BuscarFamiliarDesignado(1);
-      // BuscarTodosFamiliarDesignado();
-      BorrarFamiliarDesignado(24);
+      AddFamiliarDesignado();
+      BuscarFamiliarDesignado(1);
+      BuscarTodosFamiliarDesignado();
+      BorrarFamiliarDesignado(2);
 
       // Historia
-      // AddHistoria();
-      // BuscarHistoria(1);
-      // BuscarTodasHistorias();
+      AddHistoria();
+      BuscarHistoria(1);
+      BuscarTodasHistorias();
       BorrarHistoria(24);
 
       // SugerenciaCuidado
-      // AddSugerenciaCuidado();
-      // BuscarSugerenciaCuidado(1);
-      // BuscarTodasSugerenciaCuidados();
-      BorrarSugerenciaCuidado(24);
+      AddSugerenciaCuidado();
+      BuscarSugerenciaCuidado(1);
+      BuscarTodasSugerenciaCuidados();
+      BorrarSugerenciaCuidado(2);
 
       // SignoVital
-      // AddSignoVital();
-      // BuscarSignoVital(1);
-      // BuscarTodasSignoVitales();
-      BorrarSignoVital(24);
+      AddSignoVital();
+      BuscarSignoVital(1);
+      BuscarTodasSignoVitales();
+      BorrarSignoVital(2);
 
 
 
